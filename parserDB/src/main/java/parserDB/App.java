@@ -38,7 +38,7 @@ public class App
 
         Parser parserObj = new Parser();
         DataBase databaseObj = new DataBase();
-
+//test comiita
 
         try {
             databaseObj.connectionToDataBase();

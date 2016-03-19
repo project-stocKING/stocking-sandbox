@@ -47,6 +47,7 @@ public class App
         }
         try {
             databaseObj.loadDocuments(parserObj.loadFromFile());
+            System.out.println("Zakonczone wgrywanie danych");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (ParseException e) {
@@ -55,4 +56,6 @@ public class App
 
 
     }
+
+
 }

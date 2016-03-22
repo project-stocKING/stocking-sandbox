@@ -35,7 +35,7 @@ public class App
 {
     public static void main( String[] args )
     {
-
+        URLdownload urlDownload = new URLdownload();
         Parser parserObj = new Parser();
         DataBase databaseObj = new DataBase();
 //test comiita
@@ -46,9 +46,9 @@ public class App
             e.printStackTrace();
         }
         try {
-            databaseObj.loadDocuments(parserObj.loadFromFile());
+            databaseObj.loadDocuments(urlDownload.downloadFromUrl());
             System.out.println("Zakonczone wgrywanie danych");
-        } catch (FileNotFoundException e) {
+        } catch (java.io.IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();

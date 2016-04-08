@@ -15,8 +15,8 @@ public class Parser {
 
     public ArrayList<File> loadFromFile() throws FileNotFoundException, ParseException, NullPointerException  {
 
-
-        java.io.File direction = new java.io.File("/home/patryk/IdeaProjects/parserDB/GPWdata/");
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        java.io.File direction = new java.io.File("/home/mczarnecki/Dane/");
 
 
             for (java.io.File file : direction.listFiles()) {

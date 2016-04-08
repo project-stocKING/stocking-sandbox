@@ -22,16 +22,20 @@ public class URLdownload {
         url = new URL("http://bossa.pl/pub/ciagle/omega/cgl/ndohlcv.txt");
         Scanner readFile = new Scanner(url.openStream());
         String line = null;
-
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
         while(readFile.hasNextLine()){
             line = readFile.nextLine();
             String[] allLine = line.split(",");
-            Date date = new SimpleDateFormat("yyyyMMdd", (Locale.ENGLISH)).parse(allLine[1]);
+
+
+
+            Date date = new SimpleDateFormat("yyyyMMdd", (Locale.GERMANY)).parse(allLine[1]);
             File fileObj = new File(allLine[0],
                     date, Double.parseDouble(allLine[2]),
                     Double.parseDouble(allLine[3]), Double.parseDouble(allLine[4]),
                     Double.parseDouble(allLine[5]), Float.parseFloat(allLine[6]));
             urlObjectList.add(fileObj);
+
         }
         return urlObjectList;
      }
